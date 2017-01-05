@@ -1,0 +1,344 @@
+/*navbar */
+/* file */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  margin: 0.67em 0;
+  font-size: 2em;
+}
+
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  height: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  padding: 0.35em 0.625em 0.75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
+}
+
+legend {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* ---------------------------------------- */
+/* G E N E R A L    S T Y L E               */
+/* ---------------------------------------- */
+.clearfix:before, .clearfix:after,
+.nav:before,
+.nav:after {
+  display: table;
+  content: " ";
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  padding: 30px 45px;
+  background-color: #00accc;
+  z-index: 10;
+}
+
+.nav {
+  display: inline-block;
+  float: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav__item {
+  position: relative;
+  display: block;
+  padding: 12px 25px;
+}
+.nav__link {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font: 400 13px/16px "Open Sans", sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+.nav__link:hover, .nav__link:focus {
+  text-decoration: none;
+  background-color: #22b5d5;
+}
+.nav__link--active {
+  background-color: #22b5d5;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    float: left;
+    margin: 0;
+  }
+  .nav__item {
+    float: left;
+  }
+}
+.heading {
+  font: 300 28px/32px "Open Sans", sans-serif;
+  color: #282828;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------- */
+/* U P D A T E    C O N T R O L L E R    F I R M W A R E    S T Y L E  */
+/* ------------------------------------------------------------------- */
+.browse-file {
+  padding: 127px 45px;
+}
+
+.file {
+  margin: 0 auto;
+  width: 520px;
+}
+.file__heading {
+  font: 700 13px/16px "Open Sans", sans-serif;
+  color: #282828;
+  text-transform: uppercase;
+}
+
+.upload {
+  position: relative;
+  overflow: hidden;
+  font-size: 25px;
+  height: 50px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  line-height: 50px;
+  background-color: #f0f0f0;
+}
+.upload__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(20);
+  letter-spacing: 10em;
+  -ms-transform: scale(20);
+  opacity: 0;
+  cursor: pointer;
+}
+.upload__btn {
+  float: right;
+  width: 120px;
+  height: 100%;
+  background-color: #52ac62;
+  border-radius: 4px;
+  color: #fff;
+  font: 700 14px/50px "Open Sans", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+.upload__text {
+  padding-left: 16px;
+  background-color: transparent;
+  font: 400 15px/16px "Open Sans", sans-serif;
+  color: #282828;
+}

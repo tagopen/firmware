@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://23.240.183.37:8087/update_controller_firmware -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script type="text/javascript" src="./update_controller_firmware_files/jquery-3.1.1.min.js.Без названия"></script>
-<script type="text/javascript" src="./update_controller_firmware_files/jquery.json.js.Без названия"></script>
-<script type="text/javascript" src="./update_controller_firmware_files/jquery-ui.min.js.Без названия"></script>
-<style>
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
+    <!-- Open Sans googleFont  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="css/style.css">
 
-.navbar li {
-    float: left;
-}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-pinterest-extension-installed="cr2.0.5">
+    <nav class="navbar">
+      <ul class="nav">
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/matrix">Matrix</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/custom_clients">Custom clients</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/update_decoders_firmware">Update decoders firmware</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active" href="http://23.240.183.37:8087/update_controller_firmware">Update controller firmware</a></li>
+      </ul>
+    </nav>
 
-.navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-</style>
-</head><body data-pinterest-extension-installed="cr2.0.5"><ul class="navbar">
-  <li><a href="http://23.240.183.37:8087/matrix">Matrix</a></li>
-  <li><a href="http://23.240.183.37:8087/custom_clients">Custom clients</a></li>
-  <li><a href="http://23.240.183.37:8087/update_decoders_firmware">Update decoders firmware</a></li>
-  <li><a href="http://23.240.183.37:8087/update_controller_firmware">Update controller firmware</a></li>
-</ul>
-
-
-
-<div align="center">
-    <input type="file" class="file">
-    <button>Update</button>
-</div>
+    <section class="browse-file">
+      <h1 class="heading">Update controller firmware</h1>
+      <div class="file">
+        <h3 class="file__heading">Select file</h3>
+        <div class="clearfix upload">
+          <input id="file" type="file" class="upload__input">
+          <label for="file" class="upload__btn">Выбрать</label>
+          <mark class="upload__text"></mark>
+        </div>
+      </div>
+    </div>
 
 
-</body></html>
+    <!-- jQuery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.json.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>z
+  </body>
+</html>
