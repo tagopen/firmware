@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://23.240.183.37:8087/matrix -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Open Sans googleFont  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Font-Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-pinterest-extension-installed="cr2.0.5">
+    <nav class="navbar navbar--matrix">
+      <ul class="nav">
+        <li class="nav__item"><a class="nav__link nav__link--active" href="http://23.240.183.37:8087/matrix">Matrix</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/custom_clients">Custom clients</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/update_decoders_firmware">Update decoders firmware</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/update_controller_firmware">Update controller firmware</a></li>
+      </ul>
+    </nav>
+    
+    <section class="table-responsive">
+      <table class="table table--matrix">
+        <colgroup>
+          <col width="350" valign="top">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>encoders/decoders</th>
+            <th id="773ba05f-9945-4091-87b0-2631080b0b28" onclick="showDialog(&quot;/decoder_settings&quot;);" address="">773ba05f-9945-4091-87b0-2631080b0b28</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="BQ96346" address="rtsp://192.168.1.61:8554/">
+            <td onclick="showDialog(&quot;/encoder_settings&quot;);">BQ96346</td>
+            <td>
+              <span class="checkbox-btn">
+                <input class="checkbox-btn__control" type="radio" id="checkbox-1" name="773ba05f-9945-4091-87b0-2631080b0b28">
+                <label class="checkbox-btn__box" for="checkbox-1">
+                  <span class="checkbox-btn__icon"></span>
+                </label>
+              </span>
+            </td>
+          </tr>
+          <tr id="NoneEncoders">
+            <td>None</td>
+            <td>
+              <span class="checkbox-btn">
+                <input class="checkbox-btn__control" type="radio" id="checkbox-2" name="773ba05f-9945-4091-87b0-2631080b0b28">
+                <label class="checkbox-btn__box" for="checkbox-2">
+                  <span class="checkbox-btn__icon"></span>
+                </label>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div id="modal_dialog">
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.json.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script language="javascript" type="text/javascript">
+
+    function updateEncoder(encoder){
+        row = document.getElementById(encoder.id);
+        if(!row){
+            tableRef = document.getElementById('matrix');
+            row = tableRef.insertRow(tableRef.rows.length-1);
+            row.setAttribute("id", encoder.id);
+            cell  = row.insertCell(0);
+            cell.setAttribute("onclick", "showDialog(\"/encoder_settings\");");
+
+        }
+        row.setAttribute("address", encoder.address);
+        row.cells[0].innerHTML = encoder.name;
+        //row.cells[0].disabled = !encoder.status;
+    }
+
+    function updateDecoder(decoder){
+        cell = document.getElementById(decoder.id);
+        if(!cell){
+            row = document.getElementById("headers");
+            cell = row.insertCell(row.length);
+            cell.setAttribute("id", decoder.id);
+            cell.setAttribute("onclick", "showDialog(\"/decoder_settings\");");
+            cell.innerHTML = "unknown";
+        }
+        cell.setAttribute("address", decoder.address);
+        cell.innerHTML = decoder.name
+        //cell.disabled = !decoder.status;
+    }
+
+    function normalizeTable(){
+        tableRef = document.getElementById('matrix');
+        rowHeaders = document.getElementById("headers")
+        for (var indexRow = 1; indexRow < tableRef.rows.length; indexRow++) {
+            var isDecoderPlayingStream = false;
+            for (var indexCell = 1; indexCell < rowHeaders.cells.length; indexCell++) {
+                cell = tableRef.rows[indexRow].cells[indexCell];
+                if(!cell){
+                    cell = tableRef.rows[indexRow].insertCell(indexCell);
+                }
+                var inputsArray = cell.getElementsByTagName('input');
+                if(!inputsArray || inputsArray.length == 0){
+                    radio = document.createElement("input");
+                    radio.type = "radio";
+                    radio.type = "radio";
+                    radio.name = rowHeaders.cells[indexCell].getAttribute("id");
+                    //radio.value = value;
+                    cell.appendChild(radio);
+                    inputsArray = cell.getElementsByTagName('input');
+                }
+                if(isDecoderPlayingStream){
+                    continue;
+                }
+
+                radio = inputsArray[0];
+                if(tableRef.rows[indexRow].getAttribute("id") == "NoneEncoders"){
+                    radio.checked = true;
+                continue;
+            }
+
+            addressDecoder = rowHeaders.cells[indexCell].getAttribute("address");
+            addressEncoder = tableRef.rows[indexRow].getAttribute("address");
+
+            if(addressEncoder && addressDecoder && addressDecoder == addressEncoder){
+                radio.checked = true;
+                isDecoderPlayingStream = true;
+            }else{
+                radio.checked = false;
+            }
+
+        }
+    }
+}
+
+
+
+
+function updateTable(value,name) {
+    jQuery.post("/", function(data, status) {
+            if(status != "success"){
+                return;
+            }
+            data = jQuery.toJSON(data);
+            data = jQuery.parseJSON(data);
+            var encoders = data.encoders;
+            var decoders = data.decoders;
+            var tableRef = document.getElementById('matrix');
+
+            for (var i = 0, len = encoders.length; i < len; i++) {
+                updateEncoder(encoders[i]);
+            }
+            for (var i = 0, len = decoders.length; i < len; i++) {
+                updateDecoder(decoders[i]);
+            }
+
+            normalizeTable();
+
+
+        });
+}
+
+function showDialog(uniqueName) {
+            jQuery("#modal_dialog").load(uniqueName).dialog({
+                autoOpen: false,
+                resizable: true,
+                height: 300,
+                width: 600,
+                modal: true,
+                dialogClass: "ui-dialog-titlebar",
+                close: function(event, ui)
+                    {
+                        jQuery(this).dialog('close');
+                    },
+                open: function(){
+                        jQuery('.ui-widget-overlay').bind('click',function(){
+                            jQuery('#modal_dialog').dialog('close');
+                        })
+                    }
+            });
+
+            jQuery('#modal_dialog').dialog('open');
+
+            return false;
+}
+
+jQuery("#modal_dialog").dialog("destroy");
+
+</script>
+    <script>
+      setInterval(updateTable, 500);
+    </script>
+  </body>
+</html>

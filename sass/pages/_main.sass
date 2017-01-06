@@ -32,6 +32,8 @@
   padding: 30px 45px
   background-color: $navbar-bg-color
   z-index: 10
+  &--matrix
+    margin-bottom: 0
 .nav
   display: inline-block
   float: none
@@ -115,7 +117,7 @@
     background-color: transparent
     font: 400 15px/16px $font-op
     color: $file-heading-color
-+comment("update controller firmware style")
++comment("update controller firmware page style")
 .table-responsive
   min-height: .01%
   overflow-x: auto
@@ -173,7 +175,7 @@
       bottom: 0
       margin: auto
 
-+comment("custom clients style")
++comment("custom clients page style")
 .form
   margin: 
     left: -10px
@@ -218,5 +220,25 @@
       margin-right: 20px
       font-size: 21px
       vertical-align: middle
++comment("matrix page style")
+.table
+  &--matrix
+    margin: 0
+    &>thead,
+    &>tbody,
+    &>tfoot
+      &>tr
+        &>td,
+        &>th
+          padding: 15px 50px
+        &>th
+          background-color: #e8e8e8
+          &:first-of-type
+            background-color: #e2e2e2
+        &>td
+          &:first-of-type
+            background-color: rgba(220, 220, 220, 0.53)
+
+
 
 
