@@ -317,7 +317,7 @@ th {
 .browse {
   margin: 0 auto;
   padding: 127px 45px;
-  width: 520px;
+  max-width: 520px;
 }
 .browse--controller {
   padding: 45px 45px 127px;
@@ -444,12 +444,13 @@ th {
 .form {
   margin-left: -10px;
   margin-right: -10px;
-  padding: 35px 0;
+  padding: 25px 0;
 }
 .form--border {
   border-bottom: 1px solid #eee;
 }
 .form__group {
+  margin: 10px 0;
   display: inline-block;
   vertical-align: top;
 }
