@@ -1,98 +1,111 @@
-<!DOCTYPE html>
-<!-- saved from url=(0040)http://23.240.183.37:8087/custom_clients -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script type="text/javascript" src="./custom_clients_files/jquery-3.1.1.min.js.Без названия"></script>
-<script type="text/javascript" src="./custom_clients_files/jquery.json.js.Без названия"></script>
-<script type="text/javascript" src="./custom_clients_files/jquery-ui.min.js.Без названия"></script>
-<style>
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
+    <!-- Open Sans googleFont  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Font-Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="css/style.css">
 
-.navbar li {
-    float: left;
-}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-pinterest-extension-installed="cr2.0.5">
+    <nav class="navbar">
+      <ul class="nav">
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/matrix">Matrix</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active" href="http://23.240.183.37:8087/custom_clients">Custom clients</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/update_decoders_firmware">Update decoders firmware</a></li>
+        <li class="nav__item"><a class="nav__link" href="http://23.240.183.37:8087/update_controller_firmware">Update controller firmware</a></li>
+      </ul>
+    </nav>
 
-.navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-</style>
-</head><body data-pinterest-extension-installed="cr2.0.5"><ul class="navbar">
-  <li><a href="http://23.240.183.37:8087/matrix">Matrix</a></li>
-  <li><a href="http://23.240.183.37:8087/custom_clients">Custom clients</a></li>
-  <li><a href="http://23.240.183.37:8087/update_decoders_firmware">Update decoders firmware</a></li>
-  <li><a href="http://23.240.183.37:8087/update_controller_firmware">Update controller firmware</a></li>
-</ul>
+    <section class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>ip</th>
+            <th>friendlyname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="checkbox-btn">
+                <input class="checkbox-btn__control" type="checkbox" id="checkbox-1">
+                <label class="checkbox-btn__box" for="checkbox-1">
+                  <span class="checkbox-btn__icon"></span>
+                </label>
+              </span>
+            </td>
+            <td>192.168.1.23</td>
+            <td>Decoder 1</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="checkbox-btn">
+                <input class="checkbox-btn__control" type="checkbox" id="checkbox-2">
+                <label class="checkbox-btn__box" for="checkbox-2">
+                  <span class="checkbox-btn__icon"></span>
+                </label>
+              </span>
+            </td>
+            <td>192.168.1.23</td>
+            <td>Decoder 1</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="checkbox-btn">
+                <input class="checkbox-btn__control" type="checkbox" id="checkbox-3">
+                <label class="checkbox-btn__box" for="checkbox-3">
+                  <span class="checkbox-btn__icon"></span>
+                </label>
+              </span>
+            </td>
+            <td>192.168.1.23</td>
+            <td>Decoder 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="browse browse--custom">
+      <div class="form form--border">
+        <div class="form__group">
+          <button class="btn form-controll form-controll--select"><i class="fa fa-check-square-o form-controll__icon"></i>Select All</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--deselect"><i class="fa fa-square-o form-controll__icon"></i>Deselect All</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--remove"><i class="fa fa-trash-o form-controll__icon"></i>Remove</button>
+        </div>
+      </div>
+      <div class="form">
+        <div class="form__group">
+          <input class="form-controll form-controll--text" placeholder="ex. 192.138.1.23" type="text">
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--add"><i class="fa fa-plus form-controll__icon"></i>Add</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--cancel">Cancel</button>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.json.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
 
-
-
-
-
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-
-<table>
-    <tbody><tr>
-        <th></th>
-        <th>Ip</th>
-        <th>FrindlyName</th>
-    </tr>
-    <tr>
-        <td><input type="checkbox" checked="true"></td>
-        <td>192.168.1.23</td>
-        <td>Decoder 1</td>
-
-    </tr>
-    <tr>
-        <td><input type="checkbox" checked="true"></td>
-        <td>192.168.1.24</td>
-        <td>Decoder 7</td>
-
-    </tr>
-    <tr>
-        <td><input type="checkbox"></td>
-        <td>192.168.1.25</td>
-        <td>Decoder 2</td>
-
-    </tr>
-</tbody></table>
-<br>
-<div align="center">
-    <button>Select All</button>
-    <button>Deselect All</button>
-    <button>Remove</button>
-</div>
-<hr>
-<br>
-<div align="center">
-    Ip:   <input type="text">
-
-    <button>Add</button>
-    <button>Cancel</button>
-</div>
-
-</body></html>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

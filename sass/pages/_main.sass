@@ -5,6 +5,26 @@
   &:after, 
     display: table
     content: " "
+.btn
+  display: inline-block
+  padding: 6px 12px
+  margin-bottom: 0
+  font-size: 14px
+  font-weight: 400
+  line-height: 1.42857143
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  -ms-touch-action: manipulation
+  touch-action: manipulation
+  cursor: pointer
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  background-image: none
+  border: 1px solid transparent
+  border-radius: 4px
 .navbar
   position: relative
   min-height: 50px
@@ -47,13 +67,15 @@
   color: $heading-color
   text-align: center
 +comment("update controller firmware style")
-.browse-file
+.browse
+  margin: 0 auto
   padding: 127px 45px
+  width: 520px
   &--controller
     padding: 45px 45px 127px
+  &--custom
+    padding: 0 45px
 .file
-  margin: 0 auto
-  width: 520px
   &__heading
     font: 700 13px/16px $font-op
     color: $file-heading-color
@@ -130,7 +152,7 @@
     &:checked + .checkbox-btn__box
       &:before
         content: '\f00c'
-        font-family: FontAwesome
+        font-family: $font-fa
         color: #000
   &__box
     position: relative
@@ -150,5 +172,50 @@
       right: 0
       bottom: 0
       margin: auto
+
++comment("custom clients style")
+.form
+  margin: 
+    left: -10px
+    right: -10px
+  padding: 35px 0
+  &--border
+    border-bottom: 1px solid #eee
+  &__group
+    display: inline-block
+    vertical-align: top
+  &-controll
+    margin: 
+      left: 10px
+      right: 10px
+    padding: 0 20px
+    border-radius: 4px
+    font: 700 14px/46px $font-op
+    color: #fff
+    text-transform: uppercase
+    &--select
+      background-color: #22b5d5
+    &--deselect
+      background-color: #c5c5c5
+    &--remove
+      background-color: #ea2626
+    &--add
+      background-color: #52ac62
+    &--cancel
+      background-color: #6f6f6f
+    &--text
+      padding: 0 27px
+      width: 265px
+      border: 1px solid #e8e8e8
+      border-radius: 4px
+      background-color: #f0f0f0
+      box-shadow: none
+      font: 400 13px/46px $font-op
+      color: #c5c5c5
+      text-transform: none
+    &__icon
+      margin-right: 20px
+      font-size: 21px
+      vertical-align: middle
 
 
