@@ -69,6 +69,12 @@
   font: 300 28px/32px $font-op
   color: $heading-color
   text-align: center
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus
+  outline: none
+.modal-dialog
+  display: none
 +comment("update controller firmware style")
 .browse
   margin: 0 auto
@@ -159,6 +165,7 @@
   &__box
     position: relative
     display: block
+    margin-right: 10px
     width: 16px
     height: 16px
     border: 2px solid #484848
@@ -174,6 +181,9 @@
       right: 0
       bottom: 0
       margin: auto
+    &--icon
+      &:before
+        top: -6px
 
 +comment("custom clients page style")
 .form
@@ -261,6 +271,8 @@
     box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.32)
     background: #fff
     z-index: 1050
+    &-content
+      height: auto !important
   &-button
     position: relative
     width: 16px
@@ -288,8 +300,50 @@
     &:after
       transform: rotate(45deg)
       left: 7px
++comment('modal forms')
+.tabs
+  &__controls
+    width: 100%
 
+/* The switch - the box around the slider */
+.checkbox-btn
+  &__control
+    &:checked
+      &+ .checkbox-btn__slider
+        background-color: #2196F3
+        &:before
+          transform: translateX(26px)
+    &:focus
+      &+ .checkbox-btn__slider
+        box-shadow: 0 0 1px #2196F3
+  &__switch
+    position: relative
+    display: inline-block
+    width: 60px
+    height: 34px
+  /* The slider */
+  &__slider
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #ccc
+    -webkit-transition: .4s
+    transition: .4s
+    &--round
+      border-radius: 34px
+      &::before
+        border-radius: 50%
 
-
-
-
+    &:before
+      position: absolute
+      content: ""
+      height: 26px
+      width: 26px
+      left: 4px
+      bottom: 4px
+      background-color: white
+      -webkit-transition: .4s
+      transition: .4s

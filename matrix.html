@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- Font-Awesome CSS -->
     <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Bootstrp select CSS -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- Bootstrap-slider CSS  -->
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -69,13 +73,476 @@
       </table>
     </section>
 
-    <div id="modal_dialog">
+    <div class="modal-dialog">
+      <div class="tabs">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs tabs__controls" role="tablist">
+          <li class="tabs__controls-item">
+            <a href="#general" class="tabs__controls-link" aria-controls="general" role="tab" data-toggle="tab">General</a>
+          </li>
+          <li class="tabs__controls-item">
+            <a href="#processing" class="tabs__controls-link" aria-controls="processing" role="tab" data-toggle="tab">Processing</a>
+          </li>
+          <li class="tabs__controls-item">
+            <a href="#encoder" class="tabs__controls-link" aria-controls="encoder" role="tab" data-toggle="tab">Encoder</a>
+          </li>
+          <li class="tabs__controls-item active">
+            <a href="#output" class="tabs__controls-link" aria-controls="output" role="tab" data-toggle="tab">Output</a>
+          </li>
+        </ul>
+      
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane tabs__item" id="general">
+            <div class="contact">
+              <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Encoder status:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">Playing</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Ip adress:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">192.168.88.1</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Serial number:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">342893472974</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Firmware version:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">342893472974</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Board Name:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <input type="text" class="form-control contact__form" placeholder="Board name">
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div>
+          </div>
+          <div class="tab-pane tabs__item" id="processing">
+            <div class="contact">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Using port for streaming:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <input type="text" class="form-control contact__form" placeholder="Board name">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">
+                    <span class="pull-left checkbox-btn">
+                      <input class="checkbox-btn__control" type="checkbox" id="checkbox-4">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-4">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-4">Stop capture if no HDMI after</label>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value"> 
+                    <input type="text" class="form-control contact__form contact__form--seconds" placeholder="seconds"> seconds</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Frame rate strategy:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select></div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Capture audio input:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Capture sampling audio rate:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div>
+          </div>
+          <div class="tab-pane tabs__item" id="encoder">
+            <div class="contact">
+              <div class="row">
+                <div class="col-xs-6 col-sm-5">
+                  <div class="contact__name">
+                    <span class="checkbox-btn">
+                      <input class="checkbox-btn__control" type="checkbox" id="checkbox-5">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-5">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-5">Use specific video size</label>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-7">
+                  <div class="contact__value"> 
+                    <input type="text" class="form-control contact__form contact__form--delimit" placeholder="width">
+                    <span class="contact__text contact__text--delimit">X</span>
+                    <input type="text" class="form-control contact__form contact__form--delimit" placeholder="height">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                  <div class="contact__name">Target video bitrate:</div>
+                </div>
+                <div class="col-xs-6 col-sm-7">
+                  <div class="contact__value">
+                    <input type="text" class="form-control contact__form contact__form--bitrate" placeholder="Bitrate"> 
+                    <span class="contact__text">KB/s</span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                  <div class="contact__name">Target audio bitrate:</div>
+                </div>
+                <div class="col-xs-6 col-sm-7">
+                  <div class="contact__value">
+                    <select class="selectpicker selectpicker--audio">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>                    
+                    <span class="contact__text">KB/s</span>
+
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                  <div class="contact__name">Strategy video encoding:</div>
+                </div>
+                <div class="col-xs-6 col-sm-7">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>                  
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                  <div class="contact__name">   
+                    Group of picture              
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-7">
+                  <div class="contact__value">
+                    <span class="contact__text">Length</span> 
+                    <input type="text" class="form-control contact__form contact__form--length" placeholder="Length"> 
+                  </div>
+                  <div class="contact__value">
+                    <span class="checkbox-btn">
+                      <input class="checkbox-btn__control" type="radio" id="checkbox-6" name="rate" checked>
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-6">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-6">Constant bit rate</label>
+                    </span>
+                  </div>
+                  <div class="contact__value">
+                    <span class="checkbox-btn">
+                      <input class="checkbox-btn__control" type="checkbox" id="checkbox-7">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-7">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-7">Allow filling bits to sustain bit rate</label>
+                    </span>
+                  </div>
+                  <div class="contact__value">
+                    <span class="checkbox-btn">
+                      <input class="checkbox-btn__control" type="radio" id="checkbox-8" name="rate">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-8">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-8">Variable bit rate</label>
+                    </span>
+                    <input type="text" class="form-control contact__form contact__form--bitrate" placeholder="rate">
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div><!-- /.contact -->
+          </div>
+          <div class="tab-pane tabs__item active" id="output">
+            <div class="contact">
+              <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">
+                    <span class="pull-left checkbox-btn">
+                      <input class="checkbox-btn__control" type="radio" id="checkbox-9" name="pass">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-9">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-9">Use pass though</label>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <span class="pull-left checkbox-btn">
+                      <input class="checkbox-btn__control" type="radio" id="checkbox-10" name="pass">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-10">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-10">Use confidience preview</label>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Video output</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>        
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">
+                    <span class="checkbox-btn">
+                      <input class="checkbox-btn__control" type="checkbox" id="checkbox-11">
+                      <label class="pull-left checkbox-btn__box checkbox-btn__box--icon" for="checkbox-11">
+                      </label>
+                      <label class="checkbox-btn__text" for="checkbox-11">Forse display mode</label>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <input type="text" class="form-control contact__form contact__form--delimit" placeholder="width">
+                    <span class="contact__text contact__text--delimit">X</span>
+                    <input type="text" class="form-control contact__form contact__form--delimit" placeholder="height">
+                    <span class="contact__text contact__text--delimit">-</span>
+                    <input type="text" class="form-control contact__form contact__form--hz" placeholder="Hz">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Video scaling</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>        
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Image appearence</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <span class="contact__text">Brightness</span>
+                    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                  </div>
+                  <div class="contact__value">
+                    <span class="contact__text">Contrast</span>
+                    <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                  </div>
+                  <div class="contact__value">
+                    <span class="contact__text">Hue</span>
+                    <input id="ex3" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                  </div>
+                  <div class="contact__value">
+                    <span class="contact__text">Saturation</span>
+                    <input id="ex4" data-slider-id='ex4Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">HDMI audio</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <span class="checkbox-btn">
+                      <label class="checkbox-btn__switch">
+                        <input type="checkbox" class="checkbox-btn__control">
+                        <div class="checkbox-btn__slider"></div>
+                      </label>
+                    </span>
+                    <input id="ex5" data-slider-id='ex5Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Analog audio</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <span class="checkbox-btn">
+                      <label class="checkbox-btn__switch">
+                        <input type="checkbox" class="checkbox-btn__control">
+                        <div class="checkbox-btn__slider"></div>
+                      </label>
+                    </span>
+                    <input id="ex6" data-slider-id='ex6Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div><!-- /.contact -->
+          </div><!-- /.tabs__item -->
+        </div>
+      </div>
+
+      <div class="form form--border-top">
+        <div class="form__group">
+          <button class="btn form-controll form-controll--remove">Stop playing</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--select">Reboot</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--add">Save</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--cancel">Cancel</button>
+        </div>
+      </div><!--/.form -->
+    </div>
+
+    <div class="" style="display: none">
+      <div class="tabs">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs tabs__controls" role="tablist">
+          <li class="tabs__controls-item active">
+            <a href="#general-2" class="tabs__controls-link" aria-controls="general-2" role="tab" data-toggle="tab">General</a>
+          </li>
+          <li class="tabs__controls-item">
+            <a href="#decoder" class="tabs__controls-link" aria-controls="decoder" role="tab" data-toggle="tab">Processing</a>
+          </li>
+        </ul>
+      
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane tabs__item active" id="general-2">
+            <div class="contact">
+              <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Encoder status:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">Playing</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Ip adress:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">192.168.88.1</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Serial number:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">342893472974</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Firmware version:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">342893472974</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="contact__name">Board Name:</div>
+                </div>
+                <div class="col-xs-6 col-sm-8">
+                  <div class="contact__value">
+                    <input type="text" class="form-control contact__form" placeholder="Board name">
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div>
+          </div>
+          <div class="tab-pane tabs__item" id="decoder">
+            <div class="contact">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Source:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <input type="text" class="form-control contact__form" placeholder="Source">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Protocol:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__name">Bufer size:</div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <div class="contact__value">
+                    <select class="selectpicker">
+                      <option value="Option one">Option one</option>
+                      <option value="Option two">Option two</option>
+                      <option value="Option three">Option three</option>
+                    </select>
+                  </div>
+                </div>
+              </div><!-- /.row -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form form--border-top">
+        <div class="form__group">
+          <button class="btn form-controll form-controll--remove">Stop playing</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--select">Reboot</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--add">Save</button>
+        </div>
+        <div class="form__group">
+          <button class="btn form-controll form-controll--cancel">Cancel</button>
+        </div>
+      </div><!--/.form -->
     </div>
 
     <!-- jQuery -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery.json.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap-slider JavaScript -->
+    <script src="js/bootstrap-slider.js"></script>
+
+    <!-- Bootstrap-select JavaScript -->
+    <script src="js/bootstrap-select.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
@@ -182,7 +649,7 @@ function updateTable(value,name) {
 }
 
 function showDialog(uniqueName) {
-            jQuery("#modal_dialog").load(uniqueName).dialog({
+            jQuery(".modal-dialog").load(uniqueName).dialog({
                 autoOpen: false,
                 resizable: true,
                 height: 300,
@@ -195,17 +662,17 @@ function showDialog(uniqueName) {
                     },
                 open: function(){
                         jQuery('.ui-widget-overlay').bind('click',function(){
-                            jQuery('#modal_dialog').dialog('close');
+                            jQuery('.modal-dialog').dialog('close');
                         })
                     }
             });
 
-            jQuery('#modal_dialog').dialog('open');
+            jQuery('.modal-dialog').dialog('open');
 
             return false;
 }
 
-jQuery("#modal_dialog").dialog("destroy");
+jQuery(".modal-dialog").dialog("destroy");
 
 </script>
     <script>
